@@ -27,3 +27,14 @@ def verify_user(username, password):
     check_user = Credential.user_exist(username, password)
     return check_user
 
+def create_credentials(account, username, password):
+    """
+    Function to create new user credentials
+
+    Args:
+        account: Account type
+        username: New username
+        password: New password
+    """
+    new_credential = Credential(account, username, password)
+    return new_credential

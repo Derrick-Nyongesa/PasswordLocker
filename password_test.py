@@ -1,6 +1,7 @@
 import unittest
 from password import User
 from password import Credential
+import pyperclip
 
 class TestUser(unittest.TestCase):
     """
@@ -111,6 +112,21 @@ class TestCredential(unittest.TestCase):
         """
         self.assertEqual(Credential.display_credentials(), Credential.credential_list)
 
+    def test_copy_credential(self):
+        """
+        Function that tests to check if the copy a credential made is successful
+        """
+        self.new_credential.save_credential()
+        twitter = Credential("Twitter", "Derrick-Nyongesa", "MFW673r")
+        twitter.save_credential()
+        find_credential = None
+        for credential in Credential.credential_list:
+            find_credential = Credential.find_credential(credential.account)
+            return pyperclip.copy(find_credential.password)
+        Credential.copy_credential(self.new_credential.account)
+        self.assertEqual("MFW673r", pyperclip.paste())
+        print(pyperclip.paste())
+        
 
 if __name__ == '__main__':
     unittest.main()

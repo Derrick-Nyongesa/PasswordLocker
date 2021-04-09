@@ -85,5 +85,16 @@ class TestCredential(unittest.TestCase):
         self.new_credential.delete_credential()
         self.assertEqual(len(Credential.credential_list),1)
 
+    def test_find_credential(self):
+        """
+        Function to test if we can find a credential in the credential_list
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("Twitter", "Derrick-Daniel", "MFW673r")
+        test_credential.save_credential()
+        found_credential = Credential.find_credential("Twitter")
+        self.assertEqual(found_credential.account, test_credential.account)
+
+
 if __name__ == '__main__':
     unittest.main()

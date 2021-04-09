@@ -63,3 +63,16 @@ class Credential():
         Function that deletes a saved user credential from credential_list
         """
         Credential.credential_list.remove(self)
+
+    @classmethod
+    def find_credential(cls, account):
+        """
+        Function that returns an account that matches thae account searched
+
+        Args:
+            account: The account to be searched for
+        """
+        for credential in cls.credential_list:
+            if credential.account == account:
+                return credential
+        

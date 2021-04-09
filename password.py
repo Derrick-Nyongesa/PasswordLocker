@@ -21,3 +21,10 @@ class User:
         This method saves user objects into user_list
         """
         User.user_list.append(self)
+
+
+class Credential():
+    """
+    Class to create  account credentials, generate passwords and save their information
+    """
+    credential_list = []

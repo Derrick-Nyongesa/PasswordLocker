@@ -69,6 +69,13 @@ def copy_credential(account):
     """
     return Credential.copy_credential(account)
 
+def generate_Password():
+    """
+    Function that generates a random password for the user
+    """
+    auto_password = Credential.generate_password()
+    return auto_password
+
 def main():
     print("Hello, welcome to Password Locker Manager. This is a web application that will help you manage your passwords for your various accounts that you are signed into.Use the following short codes to proceed.")
     print('')

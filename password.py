@@ -1,4 +1,6 @@
 import pyperclip
+import random
+import string
 
 class User:
     """
@@ -105,5 +107,14 @@ class Credential():
         """
         find_credential = Credential.find_credential(account)
         return pyperclip.copy(find_credential.password)
+
+    def generate_password(length=8):
+        """
+        Function that generates random password with combination of lower case and upper case
+        """
+        password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(length))
+
+    
 
         

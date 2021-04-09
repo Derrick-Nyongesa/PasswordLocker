@@ -1,5 +1,6 @@
 import unittest
 from password import User
+from password import Credential
 
 class TestUser(unittest.TestCase):
     """
@@ -37,6 +38,20 @@ class TestCredential(unittest.TestCase):
     Args:
         unittest: TestCase class that helps in creating test cases.
     """
+
+    def setUp(self):
+        """
+        This function runs before each test of the account's credentials.
+        """
+        self.new_credential = Credential("Instagram", "Derrick-Nyongesa", "DN17w9S")
+
+    def test_init(self):
+        """
+        This function tests whether  the initialization/creation of credential instances is properly done
+        """
+        self.assertEqual(self.new_credential.account, "Instagram")
+        self.assertEqual(self.new_credential.username, "Derrick-Nyongesa")
+        self.assertEqual(self.new_credential.password, "DN17w9S")
 
 if __name__ == '__main__':
     unittest.main()

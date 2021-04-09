@@ -63,6 +63,12 @@ def find_credential(account):
     """
     return Credential.find_credential(account)
 
+def copy_credential(account):
+    """
+    Function to copy credential to the clipboard
+    """
+    return Credential.copy_credential(account)
+
 def main():
     print("Hello, welcome to Password Locker Manager. This is a web application that will help you manage your passwords for your various accounts that you are signed into.Use the following short codes to proceed.")
     print('')
@@ -138,6 +144,15 @@ def main():
                         print('*' * 30)
                 else:
                     print("You don't have any credentials saved yet..........")
+
+            elif short_code == 'CC':
+                print("Enter the account name of the Credentials you want to copy")
+                searched_name = input()
+                print('\n')
+                copy_credential(searched_name)
+                searched_credential = find_credential(searched_name)
+                print(f"Your credentials for : {searched_credential.account} successfully copied!!!")
+
 
             elif short_code == 'D':
                 print("Enter the account name of the Credentials you want to delete")

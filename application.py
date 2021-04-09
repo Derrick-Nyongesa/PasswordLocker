@@ -44,3 +44,15 @@ def save_credentials(credential):
     Function to save a new user credential
     """
     credential.save_credential()
+
+def dis_credentials():
+    """
+    Function that displays various account credentials and their passwords
+    """
+    return Credential.display_credentials()
+
+def del_credential(credential):
+    """
+    Function that takes in credential objects and calls on the delete_credential to delete
+    """
+    credential.delete_credential()

@@ -45,6 +45,12 @@ class TestCredential(unittest.TestCase):
         """
         self.new_credential = Credential("Instagram", "Derrick-Nyongesa", "DN17w9S")
 
+    def tearDown(self):
+        """
+        This function cleans up after each test case has run
+        """
+        Credential.credential_list = []
+
     def test_init(self):
         """
         This function tests whether  the initialization/creation of credential instances is properly done
@@ -59,6 +65,15 @@ class TestCredential(unittest.TestCase):
         """
         self.new_credential.save_credential()
         self.assertEqual(len(Credential.credential_list),1)
+
+    def test_save_multiple_credentials(self):
+        """
+        Function to test whether we can save multiple user credentials in our credential list
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("Twitter", "Derrick-Daniel", "MFW673r")
+        test_credential.save_credential()
+        self.assertEqual(len(Credential.credential_list),2)
 
 if __name__ == '__main__':
     unittest.main()

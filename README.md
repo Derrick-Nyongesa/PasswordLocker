@@ -22,8 +22,13 @@ git clone https://github.com/Derrick-Nyongesa/PasswordLocker.git
 2. Open Terminal in the folder
 
 3. To run the application, run the following commands:
-    * $ chmod +x application.py
-    * $ ./application.py
+    ```bash
+    $ chmod +x application.py
+    ``` 
+     
+    ```bash
+    $ ./application.py
+    ``` 
 
 
 ## The application requires the following installations to operate

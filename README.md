@@ -26,10 +26,10 @@ git clone https://github.com/Derrick-Nyongesa/PasswordLocker.git
     * $ ./application.py
 
 
-## The application requires the following installations to operate 
-    * python3
-    * pyperclip
-    * pip
+## The application requires the following installations to operate
+* python3
+* pyperclip
+* pip
 
 
 ## Contact Information 

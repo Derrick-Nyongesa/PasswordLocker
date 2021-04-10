@@ -76,7 +76,8 @@ def generate_Password():
     auto_password = Credential.generate_password()
     return auto_password
 
-def main():
+def application():
+    print('*' * 130)
     print("Hello, welcome to Password Locker Manager. This is a web application that will help you manage your passwords for your various accounts that you are signed into.Use the following short codes to proceed.")
     print('')
 
@@ -100,7 +101,7 @@ def main():
         print ('\n')
         print(f"Hello {username}, Your account has been created succesfully! Your password is: {password}. WELCOME TO PASSWORD LOCKER MANAGER")
         print ('\n')
-        print("*"*85)
+        print("*"*130)
         print('\n')
 
         while True:
@@ -192,4 +193,4 @@ def main():
         
 
 if __name__ == '__main__':
-    main()
+    application()
